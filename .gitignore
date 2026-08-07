@@ -1,0 +1,24 @@
+# OS / sync artefacts
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.key
