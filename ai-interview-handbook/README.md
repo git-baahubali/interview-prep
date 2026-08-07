@@ -4,7 +4,7 @@ A modular, revision-oriented question bank for AI/ML and LLM Engineer interviews
 
 Each topic lives in its own file with its own independent question numbering, so questions can be added, removed, reordered, or rewritten without touching any other file.
 
-**Total questions: 256**
+**Total questions: 256**, plus a **[100-problem easy Python warm-up bank](14-easy-python-problems.md)** for screening rounds.
 
 ---
 
@@ -26,6 +26,15 @@ Each topic lives in its own file with its own independent question numbering, so
 | 12 | [LangGraph](12-langgraph.md) | 32 | State, nodes, edges, reducers, checkpointing, interrupts, subgraphs |
 | 13 | [LLM System Design](13-llm-system-design.md) | 18 | Architecture, cost and latency engineering, evaluation, safety, design problems |
 
+### Supplementary
+
+| # | File | Items | Focus |
+|---|---|---|---|
+| 14 | [Easy Python Problems](14-easy-python-problems.md) | 100 | Warm-up drill bank — Armstrong, palindrome, Fibonacci, prime, FizzBuzz, and the rest, with solutions, complexity, and the edge case each one is really testing |
+| — | [`easy-python-problems.csv`](easy-python-problems.csv) | 100 | The same 100 problems as a filterable spreadsheet for tracking revision progress |
+
+The 100 easy problems are counted separately because they are a drill bank rather than interview questions — no `Q1:`/`Answer` structure, just problem, solution, complexity, trap. Use them for screening rounds and to warm up before a coding interview; use `02-dsa-problem-solving.md` for the pattern-based questions that follow.
+
 ---
 
 ## Recommended learning order
@@ -42,7 +51,7 @@ Each topic lives in its own file with its own independent question numbering, so
    →  12 LangGraph  →  13 LLM System Design
 ```
 
-Fill in `05 Machine Learning Fundamentals` if your background is not ML, and `01`/`02` if the loop includes a coding screen.
+Fill in `05 Machine Learning Fundamentals` if your background is not ML, and `01`/`02` if the loop includes a coding screen. If there is an online screening round, drill the Very High frequency rows of `14 Easy Python Problems` first — those rounds test speed on the classics, not depth.
 
 ### RAG / Search-focused role
 

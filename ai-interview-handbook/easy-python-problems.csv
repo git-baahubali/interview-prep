@@ -1,0 +1,101 @@
+No,Problem,Category,Difficulty,Frequency,Key Idea,Time,Space,Common Trap
+1,Reverse a string,String,Easy,Very High,Slice with s[::-1],O(n),O(n),Strings are immutable so you cannot reverse in place
+2,Check if a string is a palindrome,String,Easy,Very High,Compare s to s[::-1] or use two pointers,O(n),O(1),Forgetting to normalise case and strip non-alphanumerics
+3,Count vowels in a string,String,Easy,High,Sum a membership test over a vowel set,O(n),O(1),Not lowercasing so uppercase vowels are missed
+4,Check if two strings are anagrams,String,Easy,Very High,Compare Counter(a) to Counter(b),O(n),O(k),Sorting works but is O(n log n); ignoring spaces and case
+5,Count character frequency,String,Easy,High,collections.Counter,O(n),O(k),Reinventing Counter with a manual dict
+6,Remove duplicate characters keeping order,String,Easy,Medium,dict.fromkeys preserves insertion order,O(n),O(n),Using a set alone destroys the original order
+7,Find the first non-repeating character,String,Easy,High,Count first then scan in order,O(n),O(k),A nested loop makes it O(n^2)
+8,Capitalise the first letter of each word,String,Easy,Medium,str.title or split-capitalise-join,O(n),O(n),"title() mangles apostrophes: ""o'brien"" becomes ""O'Brien"""
+9,Count words in a sentence,String,Easy,Medium,len(s.split()),O(n),O(n),split(' ') creates empty strings on double spaces
+10,Reverse the word order in a sentence,String,Easy,High,' '.join(s.split()[::-1]),O(n),O(n),Reversing characters instead of words
+11,Check if a string contains only digits,String,Easy,Low,str.isdigit,O(n),O(1),isdigit is True for superscripts; negatives and decimals fail
+12,Longest word in a sentence,String,Easy,Medium,"max(s.split(), key=len)",O(n),O(n),Not handling the empty-string case
+13,Remove all whitespace from a string,String,Easy,Low,''.join(s.split()),O(n),O(n),strip() only removes leading and trailing whitespace
+14,Check if a string is a pangram,String,Easy,Low,Compare the letter set to ascii_lowercase,O(n),O(1),Forgetting to filter out non-letters
+15,Toggle the case of each character,String,Easy,Low,str.swapcase,O(n),O(n),Manual looping when a builtin exists
+16,Factorial of a number,Number,Easy,Very High,Iterative product or math.factorial,O(n),O(1),Recursion hits the stack limit; 0! is 1
+17,Nth Fibonacci number,Number,Easy,Very High,Iterate with two rolling variables,O(n),O(1),Naive recursion is O(2^n) and times out
+18,Print the Fibonacci series up to n terms,Number,Easy,Very High,Same rolling pair inside a loop,O(n),O(1),Off-by-one on how many terms to print
+19,Check if a number is prime,Number,Easy,Very High,Trial division up to sqrt(n),O(sqrt n),O(1),Looping to n is too slow; 1 is not prime; handle n<2
+20,Print all primes in an interval,Number,Easy,High,Sieve of Eratosthenes for a range,O(n log log n),O(n),Re-running an is_prime check per number is slower
+21,Check if a number is an Armstrong number,Number,Easy,Very High,Sum each digit to the power of the digit count,O(d),O(1),Hardcoding power 3 — it must equal the number of digits
+22,Sum the digits of a number,Number,Easy,High,Repeated mod 10 and floor divide,O(d),O(1),Forgetting to handle negative input
+23,Reverse the digits of a number,Number,Easy,High,Build with r = r*10 + n%10,O(d),O(1),Losing the sign; trailing zeros disappear (120 to 21)
+24,Check if a number is a palindrome,Number,Easy,High,Compare to its digit reversal,O(d),O(1),Negative numbers are never palindromes
+25,Greatest common divisor (GCD),Number,Easy,High,"Euclid: while b: a, b = b, a%b",O(log n),O(1),Looping over all candidates instead of using Euclid
+26,Least common multiple (LCM),Number,Easy,Medium,"a*b // gcd(a, b)",O(log n),O(1),Integer division matters; a*b can be large
+27,Check if a number is a perfect number,Number,Easy,Medium,Sum proper divisors up to sqrt(n),O(sqrt n),O(1),Including n itself in the divisor sum
+28,Count the digits in a number,Number,Easy,Medium,len(str(abs(n))) or repeated division,O(d),O(1),0 has one digit not zero digits
+29,Swap two numbers without a temp variable,Number,Easy,Medium,"a, b = b, a",O(1),O(1),Reaching for XOR when tuple unpacking is idiomatic
+30,Check if a number is even or odd,Number,Easy,Very High,n % 2 == 0,O(1),O(1),n % 2 == 1 is False for negative odd numbers in Python
+31,Find the largest of three numbers,Number,Easy,High,"max(a, b, c)",O(1),O(1),Long if-elif chains instead of max
+32,Multiplication table of a number,Number,Easy,Medium,Loop 1 to 10 and print,O(1),O(1),Range bounds excluding 10
+33,Check if a number is a power of two,Number,Easy,Medium,n > 0 and n & (n-1) == 0,O(1),O(1),Forgetting the n > 0 guard — 0 passes the bit test
+34,Sum of squares of the first n naturals,Number,Easy,Low,n(n+1)(2n+1)//6 or a loop,O(1),O(1),Floating division instead of integer division
+35,Convert decimal to binary,Number,Easy,Medium,bin(n)[2:] or repeated mod 2,O(log n),O(log n),Forgetting to strip the '0b' prefix
+36,Check if a year is a leap year,Number,Easy,Medium,Divisible by 4 and (not by 100 or by 400),O(1),O(1),Omitting the 400 rule — 1900 is not a leap year
+37,Simple and compound interest,Number,Easy,Low,Direct formula,O(1),O(1),Integer division truncating the rate
+38,Sum all elements in a list,List,Easy,Very High,sum(lst),O(n),O(1),Manual accumulation loop when sum exists
+39,Find the largest and smallest in a list,List,Easy,Very High,max(lst) and min(lst),O(n),O(1),ValueError on an empty list
+40,Find the second largest in a list,List,Easy,Very High,Single pass tracking the two best,O(n),O(1),sorted()[-2] fails when duplicates tie for largest
+41,Reverse a list,List,Easy,High,lst[::-1] for a copy or lst.reverse() in place,O(n),O(n) / O(1),reverse() returns None — a very common bug
+42,Remove duplicates from a list,List,Easy,Very High,dict.fromkeys to keep order,O(n),O(n),set() loses order; unhashable elements raise TypeError
+43,Sort a list without using sort,List,Easy,High,Bubble or insertion sort,O(n^2),O(1),Being unable to state why it is O(n^2)
+44,Count element occurrences in a list,List,Easy,High,Counter or lst.count(x),O(n),O(k),Calling .count in a loop makes it O(n^2)
+45,Merge two sorted lists,List,Easy,Very High,Two pointers walking both lists,O(n+m),O(n+m),Concatenating and re-sorting wastes the sorted input
+46,Sum of even and odd numbers in a list,List,Easy,Medium,Filter by n % 2 and sum,O(n),O(1),Negative-odd modulo behaviour in Python
+47,Move all zeroes to the end,List,Easy,High,Two pointers; swap non-zeros forward,O(n),O(1),Building a new list when in-place is expected
+48,Rotate a list by k positions,List,Easy,High,lst[k:] + lst[:k] with k %= n,O(n),O(n),Not taking k modulo n when k > n
+49,Find the intersection of two lists,List,Easy,High,set(a) & set(b),O(n+m),O(n),Nested loops give O(n*m); output order is not guaranteed
+50,Find missing numbers in a range,List,Easy,High,"set(range(1, n+1)) - set(lst)",O(n),O(n),For exactly one missing use the n(n+1)/2 sum trick
+51,Flatten a nested list,List,Easy,High,Nested comprehension or recursion for deep nesting,O(n),O(n),A comprehension only flattens one level deep
+52,Check if a list is sorted,List,Easy,Medium,"all(a <= b for a, b in zip(lst, lst[1:]))",O(n),O(1),Sorting a copy to compare is O(n log n)
+53,Sum of a list of lists / matrix sum,List,Easy,Medium,"sum(map(sum, matrix))",O(n),O(1),Forgetting ragged rows
+54,Cumulative sum of a list,List,Easy,Medium,itertools.accumulate,O(n),O(n),Recomputing a prefix sum each step gives O(n^2)
+55,Find all pairs summing to a target,List,Easy,Very High,Hash set of complements in one pass,O(n),O(n),Nested loops; double-counting a pair; reusing one element
+56,Split a list into equal chunks,List,Easy,Medium,Slice in steps of size k,O(n),O(n),Dropping the short final chunk
+57,Find the mode of a list,List,Easy,Medium,Counter(lst).most_common(1),O(n),O(k),Ties for the mode are ambiguous — ask
+58,Interchange the first and last elements,List,Easy,Low,"lst[0], lst[-1] = lst[-1], lst[0]",O(1),O(1),Failing on a single-element or empty list
+59,Multiply all numbers in a list,List,Easy,Medium,math.prod,O(n),O(1),Initialising the accumulator to 0 instead of 1
+60,Find array leaders (greater than all to the right),List,Easy,Medium,Scan right to left tracking the running max,O(n),O(n),Nested loops give O(n^2)
+61,Merge two dictionaries,Dict,Easy,Very High,"{**a, **b} or a | b in 3.9+",O(n),O(n),Later keys silently overwrite earlier ones
+62,Sort a dictionary by value,Dict,Easy,Very High,"sorted(d.items(), key=lambda kv: kv[1])",O(n log n),O(n),Sorting keys instead of items
+63,Invert a dictionary,Dict,Easy,High,"{v: k for k, v in d.items()}",O(n),O(n),Duplicate values collapse and lose entries
+64,Sum all values in a dictionary,Dict,Easy,Medium,sum(d.values()),O(n),O(1),Iterating keys and re-indexing needlessly
+65,Find the key with the maximum value,Dict,Easy,High,"max(d, key=d.get)",O(n),O(1),max(d) returns the largest key not the max value
+66,Group items by a property,Dict,Easy,High,defaultdict(list),O(n),O(n),KeyError from a plain dict without setdefault
+67,Count word frequency in a text,Dict,Easy,Very High,Counter(text.lower().split()),O(n),O(k),Not normalising case or stripping punctuation
+68,Check if two dictionaries are equal,Dict,Easy,Low,a == b,O(n),O(1),Key order is irrelevant to equality
+69,Remove a key safely,Dict,Easy,Medium,"d.pop(key, None)",O(1),O(1),del raises KeyError when the key is absent
+70,Nested dictionary access with a default,Dict,Easy,Medium,"Chained d.get(a, {}).get(b)",O(1),O(1),Chained [] raises KeyError or TypeError
+71,Check for balanced parentheses,Stack,Easy,Very High,Stack; push openers and match closers,O(n),O(n),Not checking the stack is empty at the end
+72,Implement a stack using a list,Stack,Easy,High,append and pop from the end,O(1),O(n),pop(0) is O(n) — that builds a queue not a stack
+73,Implement a queue,Queue,Easy,High,collections.deque with popleft,O(1),O(n),list.pop(0) is O(n) per operation
+74,Binary search in a sorted list,Search,Easy,Very High,Halve the range with low/mid/high,O(log n),O(1),mid overflow style bugs; wrong loop bound (low <= high)
+75,Linear search,Search,Easy,Medium,Scan until found,O(n),O(1),Returning the value instead of the index
+76,FizzBuzz,Logic,Easy,Very High,Check %15 first then %3 and %5,O(n),O(1),"Testing 3 and 5 before 15 so 15 prints ""Fizz"""
+77,Print a right-angled star triangle,Pattern,Easy,High,Nested loop printing i stars,O(n^2),O(1),Off-by-one in range bounds
+78,Print a pyramid star pattern,Pattern,Easy,High,Leading spaces then 2i-1 stars,O(n^2),O(1),Miscalculating the space count per row
+79,Print an inverted star pattern,Pattern,Easy,Medium,Loop the row count downwards,O(n^2),O(1),Reversed range bounds
+80,Print Pascal's triangle,Pattern,Easy,Medium,Each row from the previous row's pairwise sums,O(n^2),O(n),Mishandling the first and last 1 of each row
+81,Read a file and count lines or words,File,Easy,High,Iterate the file handle,O(n),O(1),Not using a with block; readlines() loads everything
+82,Find the most frequent word in a large file,File,Easy,Medium,Stream lines into a Counter,O(n),O(k),Reading the whole file into memory at once
+83,Write a list to a file line by line,File,Easy,Medium,writelines with explicit newlines,O(n),O(1),writelines does not add newline characters
+84,Check if a number appears twice in a list,Set,Easy,High,Track seen values in a set,O(n),O(n),Nested loops give O(n^2)
+85,Check if all list elements are unique,Set,Easy,High,len(set(lst)) == len(lst),O(n),O(n),Unhashable elements raise TypeError
+86,Union and difference of two lists,Set,Easy,Medium,Set operators | and -,O(n+m),O(n),Sets do not preserve order
+87,Remove common elements between lists,Set,Easy,Medium,set(a) - set(b),O(n+m),O(n),Mutating a list while iterating it
+88,Fibonacci with memoisation,Recursion,Easy,High,functools.lru_cache on the recursion,O(n),O(n),Forgetting the cache leaves it exponential
+89,Sum of digits recursively,Recursion,Easy,Medium,n%10 + f(n//10) with base case 0,O(d),O(d),Missing or wrong base case causes infinite recursion
+90,Reverse a string recursively,Recursion,Easy,Medium,f(s[1:]) + s[0],O(n^2),O(n),Slicing per call makes it quadratic — mention it
+91,Tower of Hanoi,Recursion,Easy,Medium,Move n-1 aside then the base then back,O(2^n),O(n),Confusing the auxiliary and destination pegs
+92,Power of a number (fast exponentiation),Recursion,Easy,Medium,Halve the exponent and square,O(log n),O(log n),Not handling a negative or zero exponent
+93,Flatten a nested dictionary,Recursion,Easy,High,Recurse and join keys with a separator,O(n),O(n),Not handling lists nested inside the dictionary
+94,Bubble sort,Sorting,Easy,High,Repeated adjacent swaps,O(n^2),O(1),No early exit when a pass makes no swaps
+95,Insertion sort,Sorting,Easy,Medium,Shift each element into its sorted position,O(n^2),O(1),Best case is O(n) on sorted input — say so
+96,Selection sort,Sorting,Easy,Medium,Repeatedly select the minimum,O(n^2),O(1),Claiming it is stable — it is not
+97,Merge sort,Sorting,Easy,High,"Divide, sort halves, merge",O(n log n),O(n),Forgetting the O(n) auxiliary space
+98,Quick sort,Sorting,Easy,High,Partition around a pivot then recurse,O(n log n) avg,O(log n),Worst case is O(n^2) on sorted input with a bad pivot
+99,Count set bits in a number,Bit,Easy,Medium,bin(n).count('1') or Brian Kernighan's loop,O(log n),O(1),Not knowing the n & (n-1) trick
+100,Find the single number in a list of pairs,Bit,Easy,High,XOR every element together,O(n),O(1),Using a Counter when XOR is O(1) space
