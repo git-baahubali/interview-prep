@@ -4,7 +4,7 @@ Patterns that actually appear in AI/ML engineering screens: hashing, two pointer
 
 **Questions:** 8
 
-For the easier warm-up classics — Armstrong numbers, palindromes, Fibonacci, prime checks, FizzBuzz, string and list one-liners — see [`14-easy-python-problems.md`](14-easy-python-problems.md) (100 problems with solutions and complexity). Those are what screening rounds test; the questions below are the pattern-based ones that come after.
+For the easier warm-up classics — Armstrong numbers, palindromes, Fibonacci, prime checks, FizzBuzz, string and list one-liners — see [`14-easy-python-problems.md`](14-easy-python-problems.md) (100 problems, each with the logic explained, working code, and complexity). Those are what screening rounds test; the questions below are the pattern-based ones that come after.
 
 ---
 

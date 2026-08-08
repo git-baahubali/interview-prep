@@ -30,10 +30,10 @@ Each topic lives in its own file with its own independent question numbering, so
 
 | # | File | Items | Focus |
 |---|---|---|---|
-| 14 | [Easy Python Problems](14-easy-python-problems.md) | 100 | Warm-up drill bank — Armstrong, palindrome, Fibonacci, prime, FizzBuzz, and the rest, with solutions, complexity, and the edge case each one is really testing |
-| — | [`easy-python-problems.csv`](easy-python-problems.csv) | 100 | The same 100 problems as a filterable spreadsheet for tracking revision progress |
+| 14 | [Easy Python Problems](14-easy-python-problems.md) | 100 | Warm-up drill bank — Armstrong, palindrome, Fibonacci, prime, FizzBuzz, and the rest. Each problem has the **logic in plain words**, working code, complexity with the reason, and the edge case it is really testing |
+| — | [`easy-python-problems.csv`](easy-python-problems.csv) | 100 | The same 100 problems as a spreadsheet, if you want to sort and filter them or track revision progress offline |
 
-The 100 easy problems are counted separately because they are a drill bank rather than interview questions — no `Q1:`/`Answer` structure, just problem, solution, complexity, trap. Use them for screening rounds and to warm up before a coding interview; use `02-dsa-problem-solving.md` for the pattern-based questions that follow.
+The 100 easy problems are counted separately because they are a drill bank rather than interview questions — no `Q1:`/`Answer` structure, just logic, solution, complexity, trap. File 14 opens with a frequency-ranked index table and closes with a 20-problem revision shortlist. Use them for screening rounds and to warm up before a coding interview; use `02-dsa-problem-solving.md` for the pattern-based questions that follow.
 
 ---
 
